@@ -15,21 +15,20 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			//função do seletor
+			//função do seletor de quantidade
 			var select = '';
 			for (i=1;i<=30;i++){
 				select += '<option val=' + i + '>' + i + '</option>';
 			}
 			$('#seletor').html(select);
 			
-			//função das checkboxes
+			//função das checkboxes auto-exclusivas
 			$('.radioButton').click(function() {
 				$('.radioButton').prop("checked", false);
 				$(this).prop("checked", true);
 			});
 				
 		});//fim do jQuery
-		
 		
 	</script>
 
@@ -76,13 +75,12 @@
 		
 		<div class="contentbox">
 			
-		
 				<FORM ACTION="./registrar.html">
 					<table>
 						<tr><td>Nome da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="nome"/></td></tr>
 						<tr><td>Tipo da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="fabricante"/></td></tr>
 						<tr><td>Código da Mercadoria:</td>	<td><INPUT TYPE="NUMBER" NAME = "preco"/></td></tr>
-						<tr><td>Quantidade:</td>			<td><select id='seletor'></select></td></tr>
+						<tr><td>Quantidade:</td>		<td><select id='seletor'></select></td></tr>
 						<tr><td><input type="checkbox" id="txtAge1" class="radioButton" name="option1" value="">Compra</input></td>
 						<td><input type="checkbox" id="txtAge2" class="radioButton" name="option2" value="">Venda</input></td></tr>
 						<tr><td><INPUT TYPE="SUBMIT" NAME="CMD" VALUE="Confirmar"/></td></tr>
@@ -92,16 +90,10 @@
 		
 		
 		
-		
-		
-		
-		
-		
 		</div>
 		<div id="clear"></div>
 		
-		
-		
+
 		<!--Rodapé-->
 		
 		<div id="rodape">
@@ -109,9 +101,6 @@
 		</div>
 		
 	</div>
-		
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>
