@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>teste-do-mercado</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	
+	<link href="css/style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//função do seletor
+			var select = '';
+			for (i=1;i<=30;i++){
+				select += '<option val=' + i + '>' + i + '</option>';
+			}
+			$('#seletor').html(select);
+			
+			//função das checkboxes
+			$('.radioButton').click(function() {
+				$('.radioButton').prop("checked", false);
+				$(this).prop("checked", true);
+			});
+				
+		});//fim do jQuery
+		
+		
+	</script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	  
+    <div class="container">
+		<!--Header-->
+		<div class=".visible-xs-block, hidden-xs">
+			<div id="header"></div>
+		</div>
+		
+		<!--Menu-->
+		<div class="navbar navbar-default" role="navigation">
+		
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			
+				<span class="navbar-brand"><a href="index.html">Home</a></span>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Compra & Venda</a></li>
+					<li><a href="#">Operações</a></li>
+					<li><a href="#" onclick="window.alert('Aplicativo de compra e venda da Valemobi')">Sobre</a></li>
+					<li><a href="#" onclick="window.alert('E-mail: mat.dardenne@gmail.com e celular: (11)95590-9346')">Contato</a></li>
+				</ul>
+			</div>
+		
+		</div>
+		
+		<!--Corpo-->
+		
+		
+		<div class="contentbox">
+			
+		
+				<FORM ACTION="./registrar.html">
+					<table>
+						<tr><td>Nome da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="nome"/></td></tr>
+						<tr><td>Tipo da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="fabricante"/></td></tr>
+						<tr><td>Código da Mercadoria:</td>	<td><INPUT TYPE="NUMBER" NAME = "preco"/></td></tr>
+						<tr><td>Quantidade:</td>			<td><select id='seletor'></select></td></tr>
+						<tr><td><input type="checkbox" id="txtAge1" class="radioButton" name="option1" value="">Compra</input></td>
+						<td><input type="checkbox" id="txtAge2" class="radioButton" name="option2" value="">Venda</input></td></tr>
+						<tr><td><INPUT TYPE="SUBMIT" NAME="CMD" VALUE="Confirmar"/></td></tr>
+					</table>
+				</FORM>
+				<br>
+		
+		
+		
+		
+		
+		
+		
+		
+		</div>
+		<div id="clear"></div>
+		
+		
+		
+		<!--Rodapé-->
+		
+		<div id="rodape">
+			Desenvolvido por Matheus Adorni Dardenne, sem direitos reservados.
+		</div>
+		
+	</div>
+		
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
