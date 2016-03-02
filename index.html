@@ -27,9 +27,18 @@
 				$('.radioButton').prop("checked", false);
 				$(this).prop("checked", true);
 			});
+			
+			//hide e show do contentbox
+			$("#cev").click(function(){
+				$("#divcom").show();
+				$("#oper").hide();
+			});
+			$("#op").click(function(){
+				$("#oper").show();
+				$("#divcom").hide();
+			});
 				
 		});//fim do jQuery
-		
 		function calculaValor(valor){
 			console.log(valor);
 			document.getElementById('valbox').value=50*valor;
@@ -67,8 +76,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Compra & Venda</a></li>
-					<li><a href="#">Operações</a></li>
+					<li><a href="#" id="cev">Compra & Venda</a></li>
+					<li><a href="#" id="op">Operações</a></li>
 					<li><a href="#" onclick="window.alert('Aplicativo de compra e venda da Valemobi')">Sobre</a></li>
 					<li><a href="#" onclick="window.alert('E-mail: mat.dardenne@gmail.com e celular: (11)95590-9346')">Contato</a></li>
 				</ul>
@@ -78,10 +87,10 @@
 		
 		<!--Corpo-->
 		
-		
 		<div class="contentbox">
-			
 		
+			<div id="divcom">
+			
 				<FORM ACTION="php/submit.php" METHOD="post">
 					<table>
 						<tr><td>Nome da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="nome_mer"/></td></tr>
@@ -97,9 +106,22 @@
 					</table>
 				</FORM>
 				<br>
-		
+				
+			</div>
+			<div id = "oper">
+				<FORM ACTION="php/retrieve.php" METHOD="post">
+				
+					<INPUT TYPE="SUBMIT" NAME="buscop" VALUE="Buscar Operações"/>
+				
+				</FORM>
+			</div>
 		</div>
+		
+		
+		
 		<div id="clear"></div>
+		
+		
 		
 		<!--Rodapé-->
 		
