@@ -49,6 +49,34 @@
 				
 			}
 		}
-	
+		
+		public function Buscar() {
+			try {
+				$sql = "SELECT * FROM operacoes order by nome";
+				$result = Conexao::getInstance()->query($sql);
+				$lista = $result->fetchAll(PDO::FETCH_ASSOC);
+				$f_lista = array();
+				
+				foreach ($lista as $l){
+					$f_lista[] = $this->populaOperacao($l);
+				}
+				
+				return $f_lista;
+			} catch (Exception $e) {
+				print "Ocorreu o erro: ".$e->getMessage();
+			}
+
+		}
+		
+		private function populaOperacao($row) {
+			$pojo = new PojoOperacao;
+			$pojo->setCod_mer($row['cor_mer']);
+			$pojo->setNome_mer($row['nome_mer']);
+			$pojo->setTipo_mer($row['tipo_mer']);
+			$pojo->setQnt($row['qnt']);
+			$pojo->setValor($row['valor']);
+			$pojo->setTipo_neg($row['tipo_neg']);
+			return $pojo;
+		}
 	}
 ?>
