@@ -9,14 +9,15 @@
 	$tipo_mer 	= $_POST['tipo_mer'];
 	$valor		= $_POST['valor'];
 	$qnt 		= $_POST['qnt'];
-	$tipo_neg	= 1;//Compra é 1, venda é 0.
+	$tipo_neg	= 1;//Compra ? 1, venda ? 0.
 	if(isset($_POST['venda']) && $_POST['venda'] == '0'){
 		$tipo_neg = 0;
 	}
 	
 	if(empty($nome_mer) || empty($cod_mer) || empty($tipo_mer) || empty($valor)){
-		header('Location: ../index.html');
-		echo "Há um erro no preenchimento dos campos!";
+		$message = 'Dados inseridos incorretamente!';
+		header('Location: ../index.php.?message='.$message);
+		exit();
 	}else{
 		$dao = DaoOperacoes::getInstance();
 		$pojoOp = new PojoOperacao();
@@ -27,9 +28,13 @@
 		$pojoOp->setValor($valor);
 		$pojoOp->setTipo_neg($tipo_neg);
 		if($dao->Inserir($pojoOp)){
-			echo "Inserido com sucesso!";
+			$message = 'Operação realizada com sucesso!';
+			header('Location: ../index.php.?message='.$message);
+			exit();
 		}else{
-			echo "Não foi possível concluir a operação!";
+			$message = 'Houve um erro, não foi possível concluir a operação!';
+			header('Location: ../index.php.?message='.$message);
+			exit();
 		}
 	}
 ?>
