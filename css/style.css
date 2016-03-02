@@ -26,6 +26,10 @@ a {
 	background:#000099;
 }
 
+#oper {
+	display:none;
+}
+
 .contentbox {
 	border:1px solid #000;
 	border-top-right-radius:9px;
