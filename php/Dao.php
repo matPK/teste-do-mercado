@@ -70,7 +70,7 @@
 		
 		private function populaOperacao($row) {
 			$pojo = new PojoOperacao;
-			$pojo->setCod_mer($row['cor_mer']);
+			$pojo->setCod_mer($row['cod_mer']);
 			$pojo->setNome_mer($row['nome_mer']);
 			$pojo->setTipo_mer($row['tipo_mer']);
 			$pojo->setQnt($row['qnt']);
