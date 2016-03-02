@@ -29,7 +29,7 @@
 		if($dao->Inserir($pojoOp)){
 			echo "Inserido com sucesso!";
 		}else{
-			echo "Não foi possível concluir a operação!"
+			echo "Não foi possível concluir a operação!";
 		}
 	}
 ?>
