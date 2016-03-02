@@ -30,6 +30,12 @@
 				
 		});//fim do jQuery
 		
+		function calculaValor(valor){
+			console.log(valor);
+			document.getElementById('valbox').value=50*valor;
+		}
+		
+		
 	</script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -75,25 +81,26 @@
 		
 		<div class="contentbox">
 			
-				<FORM ACTION="./registrar.html">
+		
+				<FORM ACTION="php/submit.php" METHOD="post">
 					<table>
-						<tr><td>Nome da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="nome"/></td></tr>
-						<tr><td>Tipo da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="fabricante"/></td></tr>
-						<tr><td>Código da Mercadoria:</td>	<td><INPUT TYPE="NUMBER" NAME = "preco"/></td></tr>
-						<tr><td>Quantidade:</td>		<td><select id='seletor'></select></td></tr>
-						<tr><td><input type="checkbox" id="txtAge1" class="radioButton" name="option1" value="">Compra</input></td>
-						<td><input type="checkbox" id="txtAge2" class="radioButton" name="option2" value="">Venda</input></td></tr>
+						<tr><td>Nome da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="nome_mer"/></td></tr>
+						<tr><td>Tipo da Mercadoria:</td>	<td><INPUT TYPE="TEXT" NAME="tipo_mer"/></td></tr>
+						<tr><td>Código da Mercadoria:</td>	<td><INPUT TYPE="NUMBER" NAME = "cod_mer"/></td></tr>
+						<tr><td>Quantidade:</td>			<td><select TYPE ="number" NAME="qnt" id='seletor' onclick="calculaValor(+document.getElementById('seletor').value)"></select></td></tr>
+						<tr><td>Valor: </td>				<td><INPUT type="number" NAME="valor" id='valbox' readonly></input></td></tr>
+						<tr>
+							<td><input type="checkbox" id="compra" class="radioButton" name="compra" value="1" checked="checked">Compra</input></td>
+							<td><input type="checkbox" id="venda" class="radioButton" name="venda" value="0">Venda</input></td>
+						</tr>
 						<tr><td><INPUT TYPE="SUBMIT" NAME="CMD" VALUE="Confirmar"/></td></tr>
 					</table>
 				</FORM>
 				<br>
 		
-		
-		
 		</div>
 		<div id="clear"></div>
 		
-
 		<!--Rodapé-->
 		
 		<div id="rodape">
