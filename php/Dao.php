@@ -52,7 +52,7 @@
 		
 		public function Buscar() {
 			try {
-				$sql = "SELECT * FROM operacoes order by nome";
+				$sql = "SELECT * FROM operacoes order by cod_mer";
 				$result = Conexao::getInstance()->query($sql);
 				$lista = $result->fetchAll(PDO::FETCH_ASSOC);
 				$f_lista = array();
