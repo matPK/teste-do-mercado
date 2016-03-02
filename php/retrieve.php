@@ -10,7 +10,7 @@
 	$c = 1;
 	if(isset($lista)){
 		foreach($lista as $i){
-			echo "Código da operação ".$c.": ".$i->getCod_mer;
+			echo "Código da operação ".$c.": ".$i->getCod_mer();
 			$c++;
 		}
 	}else{
